@@ -97,47 +97,46 @@
       color: #b2ffb2;
     }
 
-    .highlight-block {
-      background: #111;
-      padding: 2rem;
+    .highlight-stats {
       text-align: center;
-      margin-top: 3rem;
-      border: 1px solid #2a2a2a;
-      border-radius: 10px;
+      margin-top: 5rem;
+      padding: 2rem 1rem;
+      border-top: 1px solid #2f2f2f;
     }
 
-    .highlight-block h3 {
+    .highlight-stats h2 {
       font-size: 2.2rem;
       color: #8aff8a;
       margin-bottom: 1rem;
     }
 
-    .big-numbers {
+    .highlight-grid {
       display: flex;
       justify-content: center;
+      align-items: center;
+      gap: 4rem;
       flex-wrap: wrap;
-      gap: 2rem;
     }
 
-    .big-item {
-      font-size: 2rem;
+    .highlight-item {
+      font-size: 3rem;
       font-weight: bold;
-      background: #1a1a1a;
-      padding: 1.5rem 2rem;
-      border-radius: 12px;
       color: #39ff14;
-      border: 1px solid #333;
-      flex: 1;
-      min-width: 180px;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .label {
+      display: block;
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 0.5rem;
     }
 
     @media (max-width: 768px) {
-      .container {
+      .highlight-grid {
         flex-direction: column;
-      }
-      .big-numbers {
-        flex-direction: column;
-        align-items: center;
+        gap: 2rem;
       }
     }
   </style>
@@ -155,22 +154,21 @@
       <div class="info">
         <p><strong>🎂 Birthday:</strong> 24.10.2009</p>
         <p><strong>📍 Location:</strong> Varanasi, Bharat</p>
-        <p><strong>🎈 Age:</strong> <span class="counter" data-target="15">0</span>+</p>
       </div>
 
       <div class="bio">
         <h2>Me at a Glance</h2>
-        <p>Hi, I’m Samman Verma—a curious mind driven by the wonders of technology. As a student with a passion for solving complex problems and creating impact through innovation, I’ve explored diverse roles—from founding AI ventures like QuantaFeyn to publishing thought-provoking work like *Echoes of the Red Dust*. Whether leading initiatives, designing projects, or diving into intellectual debates, I aim to blend knowledge with creativity and build a future shaped by science, curiosity, and purpose.</p>
+        <p>Hi, I’m Samman Verma—a curious mind driven by the wonders of technology. As a student with a passion for solving complex problems and creating impact through innovation, I’ve explored diverse roles—from designing projects to publishing thought-provoking work like *Echoes of the Red Dust*. Whether leading initiatives or diving into intellectual debates, I aim to blend knowledge with creativity and build a future shaped by science, curiosity, and purpose.</p>
       </div>
 
       <div class="projects">
         <h2>Projects</h2>
         <ul>
-          <li>QuantaFeyn - AI Venture</li>
           <li>Echoes of the Red Dust - Author Work</li>
           <li>Smart Python Systems</li>
           <li>UI/UX Design for Navantra Club</li>
           <li>Innovative ATL Projects @ Sunbeam</li>
+          <li>AI-Based Traffic Control Simulation</li>
         </ul>
       </div>
     </div>
@@ -204,14 +202,17 @@
     </div>
   </div>
 
-  <!-- BOTTOM HIGHLIGHT SECTION -->
-  <div class="highlight-block">
-    <h3>Quick Glance</h3>
-    <div class="big-numbers">
-      <div class="big-item">Age: <span class="counter" data-target="15">0</span>+</div>
-      <div class="big-item">Python: 50%</div>
-      <div class="big-item">UI/UX: 60%</div>
-      <div class="big-item">Entrepreneur: 80%</div>
+  <!-- 🔥 BOTTOM BOLD STATS SECTION -->
+  <div class="highlight-stats">
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <span class="counter" data-target="15">0</span>+
+        <span class="label">Age</span>
+      </div>
+      <div class="highlight-item">
+        <span class="counter" data-target="5">0</span>
+        <span class="label">Projects</span>
+      </div>
     </div>
   </div>
 
@@ -224,16 +225,15 @@
         const updateCount = () => {
           const target = +counter.getAttribute('data-target');
           const current = +counter.innerText;
-          const increment = Math.ceil(target / 60);
+          const increment = Math.ceil(target / 50);
 
           if (current < target) {
             counter.innerText = current + increment > target ? target : current + increment;
-            setTimeout(updateCount, 30);
+            setTimeout(updateCount, 25);
           } else {
             counter.innerText = target;
           }
         };
-
         updateCount();
       });
 
@@ -247,5 +247,6 @@
   </script>
 </body>
 </html>
+
 
 
