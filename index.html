@@ -12,6 +12,11 @@
       color: #cce7cc;
     }
 
+    a {
+      color: #8aff8a;
+      text-decoration: none;
+    }
+
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -92,9 +97,47 @@
       color: #b2ffb2;
     }
 
+    .highlight-block {
+      background: #111;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+    }
+
+    .highlight-block h3 {
+      font-size: 2.2rem;
+      color: #8aff8a;
+      margin-bottom: 1rem;
+    }
+
+    .big-numbers {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .big-item {
+      font-size: 2rem;
+      font-weight: bold;
+      background: #1a1a1a;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      color: #39ff14;
+      border: 1px solid #333;
+      flex: 1;
+      min-width: 180px;
+    }
+
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
+      }
+      .big-numbers {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -106,11 +149,11 @@
       <header>
         <h1>Samman Verma</h1>
         <p>Python Developer | UX Designer | Founder & Secretary of Navantra ATL Club, Sunbeam Lahartara</p>
+        <p>🔗 Website: <a href="https://portfolio.sammanverma.online" target="_blank">portfolio.sammanverma.online</a></p>
       </header>
 
       <div class="info">
         <p><strong>🎂 Birthday:</strong> 24.10.2009</p>
-        <p><strong>🌐 Website:</strong> <a href="https://www.atharvasingh.com" style="color:#8aff8a;">www.atharvasingh.com</a></p>
         <p><strong>📍 Location:</strong> Varanasi, Bharat</p>
         <p><strong>🎈 Age:</strong> <span class="counter" data-target="15">0</span>+</p>
       </div>
@@ -161,6 +204,17 @@
     </div>
   </div>
 
+  <!-- BOTTOM HIGHLIGHT SECTION -->
+  <div class="highlight-block">
+    <h3>Quick Glance</h3>
+    <div class="big-numbers">
+      <div class="big-item">Age: <span class="counter" data-target="15">0</span>+</div>
+      <div class="big-item">Python: 50%</div>
+      <div class="big-item">UI/UX: 60%</div>
+      <div class="big-item">Entrepreneur: 80%</div>
+    </div>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const counters = document.querySelectorAll('.counter');
@@ -193,4 +247,5 @@
   </script>
 </body>
 </html>
+
 
